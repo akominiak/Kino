@@ -1,0 +1,40 @@
+.wrap {
+    width: 100vw;
+    background-color: #333;
+    color: #eee;
+    padding: 40px;
+}
+
+.screen {
+    width: 420px;
+    border: 1px solid #eee;
+    margin: 0 auto;
+    background-color: #ee8833;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 420px;
+    margin: 20px auto 0px;
+}
+
+.seat {
+    border: 1px solid #eee;
+    width: 40px;
+    height: 30px;
+    background-color: darkolivegreen;
+}
+
+.summary {
+    width: 420px;
+    margin: 10px auto 40px;
+    display: flex;
+    justify-content: space-between;
+}

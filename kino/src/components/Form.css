@@ -1,0 +1,16 @@
+main {
+    background-color: #333;
+    color: #eee;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+form input {
+    text-align: center;
+}
