@@ -23,6 +23,8 @@ class Form extends Component {
                             <option value="option3">18:10</option>
                             <option value="option4">21:15</option>
                         </select>
+                        <label htmlFor="email">Wpisz swój adres e-mail:</label>
+                        <input type="text" name="email" id="" />
                         <input type="submit" value="Wybierz miejsca" />
                     </form>
                 </main>
