@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 class Form extends Component {
 
@@ -40,13 +41,19 @@ class Form extends Component {
                         </select>
                         <label htmlFor="email">Wpisz swój adres e-mail:</label>
                         <input type="text" name="email" id="" />
-                        <input type="submit" value="Wybierz miejsca" onClick={this.handleSubmit} />
+
+                          {/* <input type="submit" value="Wybierz miejsca" onClick={this.handleSubmit} /> */}
+                        <Link to="/seats" className="button" 
+                        // onClick={this.handleSubmit}
+                        >Zarezerwuj miejsca</Link>
+
                     </form>
                 </main>
                 <hr />
             </>
         );
     }
+
     handleSubmit(event) {
         const templateId = 'template_id';
 

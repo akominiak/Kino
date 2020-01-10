@@ -43,7 +43,7 @@
     justify-content: space-between;
 }
 
-button.confirm {
+ .confirm {
     background-color: transparent;
     margin: 20px auto;
     width: 160px;
@@ -52,4 +52,5 @@ button.confirm {
     border: 2px solid #eee;
     color: #eee;
     cursor: pointer;
+    text-decoration: none;
 }
