@@ -14,3 +14,31 @@ form {
 form input {
     text-align: center;
 }
+
+form label {
+    text-align: left;
+    padding: 10px 0 6px 8px;
+}
+
+form input[type=submit] {
+    background-color: transparent;
+    margin: 20px auto;
+    width: 140px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid #eee;
+    color: #eee;
+    cursor: pointer;
+}
+
+.button {
+    background-color: transparent;
+    margin: 20px auto;
+    width: 160px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid #eee;
+    color: #eee;
+    cursor: pointer;
+    text-decoration: none;
+}

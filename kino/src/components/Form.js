@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 class Form extends Component {
 
@@ -38,12 +39,34 @@ class Form extends Component {
                             <option value="option3">18:10</option>
                             <option value="option4">21:15</option>
                         </select>
-                        <input type="submit" value="Wybierz miejsca" />
+                        <label htmlFor="email">Wpisz swój adres e-mail:</label>
+                        <input type="text" name="email" id="" />
+                        {/* <input type="submit" value="Wybierz miejsca" onClick={this.handleSubmit} /> */}
+                        <Link to="/seats" className="button" 
+                        // onClick={this.handleSubmit}
+                        >Zarezerwuj miejsca</Link>
                     </form>
                 </main>
                 <hr />
             </>
         );
+    }
+    handleSubmit = (event) =>{
+        console.log('udalo sie');
+        const templateId = 'template_id';
+
+        this.sendFeedback(templateId, { message_html: this.state.feedback, from_name: this.state.name, reply_to: this.state.email })
+    }
+
+    sendFeedback(templateId, variables) {
+        window.emailjs.send(
+            'gmail', templateId,
+            variables
+        ).then(res => {
+            console.log('Email successfully sent!')
+        })
+            // Handle errors here however you like, or use a React error boundary
+            .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
     }
 }
 

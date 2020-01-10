@@ -1,8 +1,8 @@
 .wrap {
-    width: 100vw;
+    width: 100%;
     background-color: #333;
     color: #eee;
-    padding: 40px;
+    padding: 40px 0;
 }
 
 .screen {
@@ -32,9 +32,25 @@
     background-color: darkolivegreen;
 }
 
+.seat.on {
+    background-color: cadetblue;
+}
+
 .summary {
     width: 420px;
     margin: 10px auto 40px;
     display: flex;
     justify-content: space-between;
+}
+
+ .confirm {
+    background-color: transparent;
+    margin: 20px auto;
+    width: 160px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid #eee;
+    color: #eee;
+    cursor: pointer;
+    text-decoration: none;
 }
