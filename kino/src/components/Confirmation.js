@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Confirmation.css';
 import axios from 'axios';
 
+
 class Confirmation extends Component {
     state = {
         seats: [],
@@ -17,7 +18,9 @@ class Confirmation extends Component {
         });
         
         axios.post('http://localhost:8080/reservation',{
-            headers: {"Access-Control-Allow-Origin": true},
+            headers: {"Access-Control-Allow-Origin": true,
+            'Access-Control-Allow-Credentials':true},
+            crossorigin:true,
             data: {
                 movie: this.state.formData.movie,  
                 sits: this.state.seats.join([',']),
