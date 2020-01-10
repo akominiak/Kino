@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { feedback: '', name: 'Name', email: 'email@example.com' };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     render() {
         return (
             <>
@@ -25,12 +30,28 @@ class Form extends Component {
                         </select>
                         <label htmlFor="email">Wpisz swój adres e-mail:</label>
                         <input type="text" name="email" id="" />
-                        <input type="submit" value="Wybierz miejsca" />
+                        <input type="submit" value="Wybierz miejsca" onClick={this.handleSubmit} />
                     </form>
                 </main>
                 <hr />
             </>
         );
+    }
+    handleSubmit(event) {
+        const templateId = 'template_id';
+
+        this.sendFeedback(templateId, { message_html: this.state.feedback, from_name: this.state.name, reply_to: this.state.email })
+    }
+
+    sendFeedback(templateId, variables) {
+        window.emailjs.send(
+            'gmail', templateId,
+            variables
+        ).then(res => {
+            console.log('Email successfully sent!')
+        })
+            // Handle errors here however you like, or use a React error boundary
+            .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
     }
 }
 

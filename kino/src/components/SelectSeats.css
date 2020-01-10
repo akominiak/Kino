@@ -32,6 +32,10 @@
     background-color: darkolivegreen;
 }
 
+.seat.on {
+    background-color: cadetblue;
+}
+
 .summary {
     width: 420px;
     margin: 10px auto 40px;

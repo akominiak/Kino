@@ -10,6 +10,14 @@ import Confirmation from './components/Confirmation';
 ReactDOM.render(<Header />, document.getElementById('header'));
 ReactDOM.render(<Form />, document.getElementById('form'));
 ReactDOM.render(<SelectSeats />, document.getElementById('selectSeats'));
-ReactDOM.render(<Confirmation />, document.getElementById('confirmation'));
+//ReactDOM.render(<Confirmation />, document.getElementById('confirmation'));
+
+const seats = document.querySelectorAll('.seat');
+for (const seat of seats) {
+    seat.addEventListener("click", function () {
+        seat.classList.toggle('on');
+    }
+    )
+}
 
 serviceWorker.unregister();
