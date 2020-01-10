@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Form.css';
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { feedback: '', name: 'Name', email: 'email@example.com' };
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+
+    state = {
+        movies: []
+      }
+    
+      componentDidMount() {
+        const url = 'http://localhost:8080/';
+        axios.get(url + 'movie')
+        .then(res => this.setState({movies: res.data}));
+      }
+
+      getOptions() {
+       return this.state.movies.map((movie) => (
+            <option>{movie.title}</option>
+        ))
+      }
+
     render() {
         return (
             <>
@@ -16,10 +29,7 @@ class Form extends Component {
                         <input type="date" name="date" id="" />
                         <label htmlFor="movie">Wybierz film:</label>
                         <select name="movie" id="">
-                            <option value="option1">Gwiezdne Wojny: Skywalker. Odrodzenie</option>
-                            <option value="option2">Jak zostałem GANGSTERem. Historia prawidziwa.</option>
-                            <option value="option3">Jumanji: Następny poziom</option>
-                            <option value="option4">Psy 3. W imię zasad</option>
+                            {this.getOptions()}
                         </select>
                         <label htmlFor="time">Wybierz godzinę:</label>
                         <select name="time" id="">
