@@ -10,9 +10,11 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
    
     const newReservation = new Reservation({
-        userId: req.body.userId,  
-        showId: req.body.showId, 
-        sits: req.body.sits 
+        movie: req.body.movie,  
+        sits: req.body.sits,
+        email: req.body.email,
+        hour: req.body.hour,
+        date: req.body.date
     });
     await newReservation.save();
     res.send(newReservation);
