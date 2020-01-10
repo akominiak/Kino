@@ -41,18 +41,20 @@ class Form extends Component {
                         </select>
                         <label htmlFor="email">Wpisz swój adres e-mail:</label>
                         <input type="text" name="email" id="" />
-                        {/* <input type="submit" value="Wybierz miejsca" onClick={this.handleSubmit} /> */}
+
+                          {/* <input type="submit" value="Wybierz miejsca" onClick={this.handleSubmit} /> */}
                         <Link to="/seats" className="button" 
                         // onClick={this.handleSubmit}
                         >Zarezerwuj miejsca</Link>
+
                     </form>
                 </main>
                 <hr />
             </>
         );
     }
-    handleSubmit = (event) =>{
-        console.log('udalo sie');
+
+    handleSubmit(event) {
         const templateId = 'template_id';
 
         this.sendFeedback(templateId, { message_html: this.state.feedback, from_name: this.state.name, reply_to: this.state.email })

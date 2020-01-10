@@ -29,7 +29,6 @@ form input[type=submit] {
     border: 2px solid #eee;
     color: #eee;
     cursor: pointer;
-}
 
 .button {
     background-color: transparent;
@@ -41,4 +40,4 @@ form input[type=submit] {
     color: #eee;
     cursor: pointer;
     text-decoration: none;
-}
+
