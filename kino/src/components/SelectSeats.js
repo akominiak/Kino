@@ -5,7 +5,15 @@ import { Link } from 'react-router-dom';
 class SelectSeats extends Component {
 
     state = {
-        selectedSeats: []
+        selectedSeats: [],
+        formState: []
+        
+    }
+    componentDidMount = () => {
+        let props = this.props.location.formState;
+        console.log('here')
+        console.log(props);
+        this.setState({formState: this.props});
     }
 
     selectSeat = (seat,e) => {
@@ -82,7 +90,10 @@ class SelectSeats extends Component {
                         <p>Cena: <span>{this.state.selectedSeats.length * 15}</span> zł</p>
                     </div>
                     {/* <button className="confirm">Zatwierdź wybór</button> */}
-                    <Link to="/confirm" className="confirm">Zatwierdź wybór</Link>
+                    <Link to={{ 
+                        pathname: "/confirm", 
+                        seatsState: this.state }}  
+                        className="confirm">Zatwierdź wybór</Link>
                 </div>
             </>
         );

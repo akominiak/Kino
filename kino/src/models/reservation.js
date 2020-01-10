@@ -2,31 +2,32 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 
 const reservation = new mongoose.Schema({
-    userId: {
-        type: Number,
+    movie: {
+        type: String,
         required: true,
-        min: 1,
-        max: 60
-    },
-    showId: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 100
     },
     sits: {
-        type: Number,
+        type: String,
         required: true,
-        min: 1,
-        max: 48
+    },
+    email:{
+        type: String, 
+        required: true
+    },
+    hour: {
+        type: String, 
+        required:true
+    },
+    date: {
+        type: Date
     }
 });
 function validateReservation(newReservation) {
 
     const schema = {
-        userId: Joi.Number().min(1).max(60).required(),
-        showId: Joi.Number().min(1).max(100).required(),
-        sits: Joi.Number().min(1).max(48).required()
+        movie: Joi.String().required(),
+        email: Joi.String().required(),
+        sits: Joi.String().required()
     };
 
     return Joi.validate(newReservation, schema);
