@@ -3,9 +3,7 @@ const movie = require('../src/routes/movies');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
-import proxy from 'http-proxy-middleware'
-app.use('/api/**', proxy({ target: "http://localhost:8080" }));
-
+ 
 app.use(express.json());
 
 app.use(express.static(__dirname + '/public'));

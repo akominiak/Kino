@@ -98,7 +98,6 @@ class SelectSeats extends Component {
             </>
         );
     }
-    
 }
 
 export default SelectSeats;
